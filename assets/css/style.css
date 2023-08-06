@@ -517,17 +517,29 @@ textarea {
   border-radius: 50%;
   border: 5px solid transparent;
   border-top-color: #ff5722; /* Change this to your desired color */
-  animation: spin 2s linear infinite;
+  position: relative;
+  overflow: hidden; /* Clip the image to stay inside the colored circle */
+  animation: none; /* Remove the animation from the color spinner */
 }
 
 .image-spinner {
   width: 80px; /* Adjust the size of the image spinner as per your preference */
   height: 80px;
-  border-radius: 50%;
-  background-color: transparent;
-  position: relative;
-  overflow: hidden;
+  position: absolute; /* Position the image inside the color spinner */
+  top: 50%; /* Center the image vertically */
+  left: 50%; /* Center the image horizontally */
+  transform: translate(-50%, -50%); /* Center the image precisely */
   animation: spin-reverse 2s linear infinite;
+  z-index: 1; /* Ensure the image is above the colored circle */
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 .image-spinner img {
