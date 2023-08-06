@@ -500,45 +500,58 @@ textarea {
 
 /* Center the pre-loader in the viewport */
 .preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000; /* Replace with your desired color */
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f0f0f0; /* Change this to your desired background color */
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-.circle {
-  position: relative;
-  width: 100px; /* Adjust the size of the circle as needed */
+.color-spinner {
+  width: 100px; /* Adjust the size of the spinner as per your preference */
   height: 100px;
   border-radius: 50%;
-  animation: rotateCircle 3s infinite linear, rotateImage 3s infinite linear;
+  border: 5px solid transparent;
+  border-top-color: #ff5722; /* Change this to your desired color */
+  animation: spin 2s linear infinite;
 }
 
-@keyframes rotateCircle {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
+.image-spinner {
+  width: 80px; /* Adjust the size of the image spinner as per your preference */
+  height: 80px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  animation: spin-reverse 2s linear infinite;
 }
 
-@keyframes rotateImage {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.image-spinner img {
+  width: 100%;
+  height: 100%;
 }
 
-/* Center the image inside the circle */
-.circle img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%; /* Adjust the image size as needed */
-  height: auto;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 
 /* preloader - end
 ================================================== */
