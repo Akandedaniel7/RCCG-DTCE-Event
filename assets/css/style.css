@@ -499,31 +499,45 @@ textarea {
   background: #fff url("../images/icon_real.png") no-repeat center center; } */
 
 /* Center the pre-loader in the viewport */
-
-#preloader {
+.preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #f9f9f9; /* Set the background color you want for the preloader */
+  background-color: #000; /* Replace with your desired color */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Make sure the preloader is on top of other content */
-  opacity: 1; /* Start with full opacity */
-  transition: opacity 0.5s ease; /* Add a smooth fade-out transition effect */
 }
 
-.loader {
-  width: 100px; /* Set the width and height of your preloader image */
+.circle {
+  position: relative;
+  width: 100px; /* Adjust the size of the circle as needed */
   height: 100px;
-  background-image: url('../images/icon_real.png'); /* Replace with the path to your image */
-  background-size: cover;
   border-radius: 50%;
-  border: 4px solid #3498db; /* Set the border color you want for the spinner */
+  animation: rotateCircle 3s infinite linear, rotateImage 3s infinite linear;
 }
 
+@keyframes rotateCircle {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes rotateImage {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Center the image inside the circle */
+.circle img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjust the image size as needed */
+  height: auto;
+}
 
 
 /* preloader - end
