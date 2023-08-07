@@ -5815,7 +5815,7 @@ button {
     padding: 0px;
     display: table; }
     .event-section .search-result-form ul li {
-      float: left;
+      /* float: left; */
       min-width: 100px;
       list-style: none;
       margin-right: 30px;
