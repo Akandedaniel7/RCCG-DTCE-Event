@@ -4,5 +4,9 @@
 }
 
 .other-pages-links > ul > li {
-    margin: 50px 0;
+    margin: 40px 0;
+}
+
+.copyright-text p {
+    color: #fff !important;
 }
