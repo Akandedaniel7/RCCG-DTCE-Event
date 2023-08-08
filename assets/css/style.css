@@ -880,6 +880,7 @@ button {
   background: -webkit-linear-gradient(top left, #ff3e00, #ffbe30);
   background: -o-linear-gradient(top left, #ff3e00, #ffbe30);
   background: linear-gradient(to bottom right, #ff3e00, #ffbe30);
+  display: none !important;
 }
 .default-header-section .header-top .basic-contact ul {
   margin: 0px;
