@@ -285,7 +285,7 @@ textarea:focus {
 ================================================== */
 .countdown-timer {
   width: 100%;
-  display: table;
+  display: none;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
